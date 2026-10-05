@@ -1,0 +1,681 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Students | Student Management System</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Students CSS -->
+    <link rel="stylesheet" href="students.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ==================================================
+     SIDEBAR
+================================================== -->
+
+<aside class="sidebar">
+
+    <!-- Logo -->
+
+    <div class="sidebar-logo">
+
+        <div class="logo-icon">
+            <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+
+        <div>
+            <h2>Student</h2>
+            <span>Management System</span>
+        </div>
+
+    </div>
+
+
+    <!-- Navigation -->
+
+    <nav class="sidebar-nav">
+
+        <a href="index.html" class="sidebar-link">
+
+            <i class="fa-solid fa-house"></i>
+
+            <span>Dashboard</span>
+
+        </a>
+
+
+        <a href="students.html" class="sidebar-link active">
+
+            <i class="fa-solid fa-user-graduate"></i>
+
+            <span>Students</span>
+
+        </a>
+
+
+        <a href="courses.html" class="sidebar-link">
+
+            <i class="fa-solid fa-book"></i>
+
+            <span>Courses</span>
+
+        </a>
+
+
+        <a href="#" class="sidebar-link">
+
+            <i class="fa-solid fa-calendar-check"></i>
+
+            <span>Attendance</span>
+
+        </a>
+
+
+        <a href="#" class="sidebar-link">
+
+            <i class="fa-solid fa-chart-column"></i>
+
+            <span>Results</span>
+
+        </a>
+
+
+        <a href="#" class="sidebar-link">
+
+            <i class="fa-solid fa-calendar-days"></i>
+
+            <span>Schedule</span>
+
+        </a>
+
+
+        <a href="#" class="sidebar-link">
+
+            <i class="fa-solid fa-gear"></i>
+
+            <span>Settings</span>
+
+        </a>
+
+    </nav>
+
+
+    <!-- Sidebar Bottom -->
+
+    <div class="sidebar-bottom">
+
+        <div class="admin-card">
+
+            <div class="admin-image">
+
+                <img
+                    src="https://i.pravatar.cc/100?img=12"
+                    alt="Admin"
+                >
+
+            </div>
+
+            <div>
+
+                <strong>John Doe</strong>
+
+                <span>Administrator</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</aside>
+
+
+
+<!-- ==================================================
+     MAIN
+================================================== -->
+
+<main class="main">
+
+
+    <!-- TOP BAR -->
+
+    <header class="topbar">
+
+        <div>
+
+            <h1>Students</h1>
+
+            <p>
+                Manage and monitor all registered students.
+            </p>
+
+        </div>
+
+
+        <div class="topbar-right">
+
+            <!-- Notification -->
+
+            <button class="notification-btn">
+
+                <i class="fa-regular fa-bell"></i>
+
+                <span></span>
+
+            </button>
+
+
+            <!-- Profile -->
+
+            <div class="top-profile">
+
+                <img
+                    src="https://i.pravatar.cc/100?img=12"
+                    alt="Profile"
+                >
+
+                <div>
+
+                    <strong>John Doe</strong>
+
+                    <small>Admin</small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ==================================================
+         STATISTICS
+    ================================================== -->
+
+    <section class="statistics">
+
+
+        <!-- Total -->
+
+        <div class="stat-card">
+
+            <div class="stat-icon purple">
+
+                <i class="fa-solid fa-users"></i>
+
+            </div>
+
+            <div>
+
+                <span>Total Students</span>
+
+                <h2 id="totalStudents">0</h2>
+
+            </div>
+
+        </div>
+
+
+        <!-- Active -->
+
+        <div class="stat-card">
+
+            <div class="stat-icon green">
+
+                <i class="fa-solid fa-user-check"></i>
+
+            </div>
+
+            <div>
+
+                <span>Active Students</span>
+
+                <h2 id="activeStudents">0</h2>
+
+            </div>
+
+        </div>
+
+
+        <!-- Courses -->
+
+        <div class="stat-card">
+
+            <div class="stat-icon blue">
+
+                <i class="fa-solid fa-book-open"></i>
+
+            </div>
+
+            <div>
+
+                <span>Courses</span>
+
+                <h2 id="courseCount">0</h2>
+
+            </div>
+
+        </div>
+
+
+        <!-- New -->
+
+        <div class="stat-card">
+
+            <div class="stat-icon orange">
+
+                <i class="fa-solid fa-user-plus"></i>
+
+            </div>
+
+            <div>
+
+                <span>New Students</span>
+
+                <h2 id="newStudents">0</h2>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         STUDENT CONTENT
+    ================================================== -->
+
+    <section class="student-container">
+
+
+        <!-- HEADER -->
+
+        <div class="student-header">
+
+            <div>
+
+                <h2>Student List</h2>
+
+                <p>
+                    View, edit and manage student information.
+                </p>
+
+            </div>
+
+
+            <button
+                class="add-student-btn"
+                id="openModalBtn"
+            >
+
+                <i class="fa-solid fa-plus"></i>
+
+                Add Student
+
+            </button>
+
+        </div>
+
+
+
+        <!-- ==================================================
+             SEARCH + FILTER
+        ================================================== -->
+
+        <div class="tools">
+
+
+            <!-- Search -->
+
+            <div class="search">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search by name, ID or email..."
+                >
+
+            </div>
+
+
+            <!-- Course filter -->
+
+            <select id="courseFilter">
+
+                <option value="all">
+                    All Courses
+                </option>
+
+                <option value="Computer Science">
+                    Computer Science
+                </option>
+
+                <option value="Software Engineering">
+                    Software Engineering
+                </option>
+
+                <option value="Business Information Systems">
+                    Business Information Systems
+                </option>
+
+                <option value="Data Science">
+                    Data Science
+                </option>
+
+            </select>
+
+
+            <!-- Status filter -->
+
+            <select id="statusFilter">
+
+                <option value="all">
+                    All Status
+                </option>
+
+                <option value="Active">
+                    Active
+                </option>
+
+                <option value="Inactive">
+                    Inactive
+                </option>
+
+            </select>
+
+        </div>
+
+
+
+        <!-- ==================================================
+             TABLE
+        ================================================== -->
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Student</th>
+
+                        <th>Student ID</th>
+
+                        <th>Course</th>
+
+                        <th>Email</th>
+
+                        <th>Status</th>
+
+                        <th>Actions</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="studentTableBody">
+
+                    <!-- JavaScript will insert students -->
+
+                </tbody>
+
+            </table>
+
+
+            <!-- Empty message -->
+
+            <div
+                class="empty-message"
+                id="emptyMessage"
+            >
+
+                <i class="fa-solid fa-user-slash"></i>
+
+                <h3>No students found</h3>
+
+                <p>
+                    Try changing your search or filter.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<!-- ==================================================
+     ADD / EDIT STUDENT MODAL
+================================================== -->
+
+<div class="modal" id="studentModal">
+
+    <div class="modal-content">
+
+
+        <!-- Modal Header -->
+
+        <div class="modal-header">
+
+            <div>
+
+                <h2 id="modalTitle">
+                    Add Student
+                </h2>
+
+                <p>
+                    Enter student information below.
+                </p>
+
+            </div>
+
+
+            <button
+                class="close-btn"
+                id="closeModalBtn"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+
+        <!-- Form -->
+
+        <form id="studentForm">
+
+
+            <!-- Student Name -->
+
+            <div class="form-group">
+
+                <label>
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    id="studentName"
+                    placeholder="Enter full name"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Student ID -->
+
+            <div class="form-group">
+
+                <label>
+                    Student ID
+                </label>
+
+                <input
+                    type="text"
+                    id="studentId"
+                    placeholder="Example: STU001"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Course -->
+
+            <div class="form-group">
+
+                <label>
+                    Course
+                </label>
+
+                <select id="studentCourse" required>
+
+                    <option value="">
+                        Select course
+                    </option>
+
+                    <option value="Computer Science">
+                        Computer Science
+                    </option>
+
+                    <option value="Software Engineering">
+                        Software Engineering
+                    </option>
+
+                    <option value="Business Information Systems">
+                        Business Information Systems
+                    </option>
+
+                    <option value="Data Science">
+                        Data Science
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Email -->
+
+            <div class="form-group">
+
+                <label>
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="studentEmail"
+                    placeholder="student@example.com"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Status -->
+
+            <div class="form-group">
+
+                <label>
+                    Status
+                </label>
+
+                <select id="studentStatus">
+
+                    <option value="Active">
+                        Active
+                    </option>
+
+                    <option value="Inactive">
+                        Inactive
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Buttons -->
+
+            <div class="form-buttons">
+
+                <button
+                    type="button"
+                    class="cancel-btn"
+                    id="cancelBtn"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="save-btn"
+                >
+
+                    <i class="fa-solid fa-check"></i>
+
+                    Save Student
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+<!-- JavaScript -->
+
+<script src="students.js"></script>
+
+
+</body>
+
+</html>

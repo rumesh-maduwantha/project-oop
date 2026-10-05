@@ -1,0 +1,1186 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #f5f7fb;
+    color: #172033;
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 40px;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #e9edf5;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+
+    animation: navbarSlide 0.7s ease;
+}
+
+
+/* Navbar entrance animation */
+
+@keyframes navbarSlide {
+
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    text-decoration: none;
+
+    min-width: 230px;
+}
+
+
+/* Logo icon */
+
+.logo-icon {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: linear-gradient(
+        135deg,
+        #4f46e5,
+        #7c3aed
+    );
+
+    color: white;
+
+    font-size: 20px;
+
+    box-shadow: 0 8px 20px rgba(79, 70, 229, 0.25);
+
+    transition: all 0.3s ease;
+}
+
+
+/* Logo icon hover */
+
+.logo:hover .logo-icon {
+
+    transform: rotate(-8deg) scale(1.1);
+
+    box-shadow:
+        0 10px 25px rgba(79, 70, 229, 0.4);
+}
+
+
+/* Logo text */
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-text span {
+    font-size: 17px;
+    font-weight: 700;
+    color: #172033;
+}
+
+.logo-text small {
+    font-size: 10px;
+    color: #7b8497;
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================================
+   NAVIGATION MENU
+========================================= */
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+
+    margin-left: 25px;
+}
+
+
+/* Navigation link */
+
+.nav-link {
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 10px 14px;
+
+    text-decoration: none;
+
+    color: #687386;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    border-radius: 10px;
+
+    transition:
+        color 0.3s ease,
+        background 0.3s ease,
+        transform 0.3s ease;
+
+}
+
+
+/* Icon */
+
+.nav-link i {
+
+    font-size: 14px;
+
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease;
+
+}
+
+
+/* Hover */
+
+.nav-link:hover {
+
+    color: #4f46e5;
+
+    background: #f1f0ff;
+
+    transform: translateY(-2px);
+
+}
+
+
+/* Icon animation */
+
+.nav-link:hover i {
+
+    transform: translateY(-2px) scale(1.15);
+
+    color: #4f46e5;
+
+}
+
+
+/* =========================================
+   ANIMATED UNDERLINE
+========================================= */
+
+.nav-link::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: -8px;
+
+    width: 0;
+    height: 3px;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        90deg,
+        #4f46e5,
+        #7c3aed
+    );
+
+    transform: translateX(-50%);
+
+    transition: width 0.3s ease;
+
+}
+
+
+/* Hover underline */
+
+.nav-link:hover::after {
+
+    width: 60%;
+
+}
+
+
+/* Active link */
+
+.nav-link.active {
+
+    color: #4f46e5;
+
+    background: #f1f0ff;
+
+}
+
+
+/* Active underline */
+
+.nav-link.active::after {
+
+    width: 60%;
+
+}
+
+
+/* =========================================
+   RIGHT SIDE
+========================================= */
+
+.nav-right {
+
+    margin-left: auto;
+
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+}
+
+
+/* =========================================
+   SEARCH
+========================================= */
+
+.search-box {
+
+    width: 190px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 0 12px;
+
+    border: 1px solid #e4e8f0;
+
+    border-radius: 10px;
+
+    background: #f8f9fc;
+
+    transition: all 0.3s ease;
+
+}
+
+
+.search-box i {
+
+    color: #9aa3b4;
+
+    font-size: 13px;
+
+}
+
+
+.search-box input {
+
+    width: 100%;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    color: #172033;
+
+}
+
+
+.search-box:focus-within {
+
+    border-color: #4f46e5;
+
+    background: white;
+
+    box-shadow:
+        0 0 0 4px rgba(79, 70, 229, 0.08);
+
+}
+
+
+/* =========================================
+   NOTIFICATION
+========================================= */
+
+.icon-btn {
+
+    position: relative;
+
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: transparent;
+
+    color: #687386;
+
+    cursor: pointer;
+
+    font-size: 17px;
+
+    transition: all 0.3s ease;
+
+}
+
+
+.icon-btn:hover {
+
+    color: #4f46e5;
+
+    background: #f1f0ff;
+
+    transform: translateY(-2px);
+
+}
+
+
+/* Notification dot */
+
+.notification-dot {
+
+    position: absolute;
+
+    top: 8px;
+    right: 8px;
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #ef4444;
+
+    border: 2px solid white;
+
+    animation: notificationPulse 1.8s infinite;
+
+}
+
+
+@keyframes notificationPulse {
+
+    0% {
+        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.5);
+    }
+
+    70% {
+        box-shadow: 0 0 0 6px rgba(239, 68, 68, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+    }
+
+}
+
+
+/* =========================================
+   PROFILE
+========================================= */
+
+.profile {
+
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 5px 8px;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+
+}
+
+
+.profile:hover {
+
+    background: #f5f6fa;
+
+}
+
+
+.profile-image {
+
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    border: 2px solid #e6e8f0;
+
+    transition: all 0.3s ease;
+
+}
+
+
+.profile-image img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+}
+
+
+.profile:hover .profile-image {
+
+    border-color: #4f46e5;
+
+    transform: scale(1.05);
+
+}
+
+
+.profile-info {
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+.profile-info strong {
+
+    font-size: 12px;
+
+    color: #172033;
+
+}
+
+
+.profile-info span {
+
+    font-size: 10px;
+
+    color: #8b94a6;
+
+}
+
+
+.profile-arrow {
+
+    font-size: 10px;
+
+    color: #8b94a6;
+
+    transition: transform 0.3s ease;
+
+}
+
+
+.profile:hover .profile-arrow {
+
+    transform: rotate(180deg);
+
+}
+
+
+/* =========================================
+   MOBILE MENU BUTTON
+========================================= */
+
+.menu-toggle {
+
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #f1f0ff;
+
+    color: #4f46e5;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.main-content {
+
+    padding: 70px 7%;
+
+}
+
+
+.hero {
+
+    min-height: 500px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 50px;
+
+}
+
+
+/* =========================================
+   HERO CONTENT
+========================================= */
+
+.hero-content {
+
+    max-width: 650px;
+
+    animation: contentFade 0.8s ease 0.2s both;
+
+}
+
+
+@keyframes contentFade {
+
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+
+.welcome {
+
+    display: inline-block;
+
+    margin-bottom: 15px;
+
+    padding: 7px 13px;
+
+    border-radius: 20px;
+
+    background: #eeedff;
+
+    color: #4f46e5;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+}
+
+
+.hero h1 {
+
+    font-size: clamp(40px, 5vw, 64px);
+
+    line-height: 1.1;
+
+    margin-bottom: 20px;
+
+    color: #172033;
+
+}
+
+
+.hero h1 span {
+
+    display: block;
+
+    background: linear-gradient(
+        90deg,
+        #4f46e5,
+        #7c3aed
+    );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+}
+
+
+.hero p {
+
+    max-width: 540px;
+
+    color: #727c8f;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.hero-buttons {
+
+    display: flex;
+
+    gap: 14px;
+
+    margin-top: 30px;
+
+}
+
+
+.primary-btn,
+.secondary-btn {
+
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 13px 20px;
+
+    border-radius: 10px;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+
+}
+
+
+.primary-btn {
+
+    border: none;
+
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        #4f46e5,
+        #7c3aed
+    );
+
+    box-shadow:
+        0 8px 20px rgba(79, 70, 229, 0.25);
+
+}
+
+
+.primary-btn:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 25px rgba(79, 70, 229, 0.35);
+
+}
+
+
+.secondary-btn {
+
+    border: 1px solid #e2e6ee;
+
+    color: #4b5568;
+
+    background: white;
+
+}
+
+
+.secondary-btn:hover {
+
+    border-color: #4f46e5;
+
+    color: #4f46e5;
+
+    transform: translateY(-4px);
+
+}
+
+
+/* =========================================
+   DASHBOARD CARD
+========================================= */
+
+.dashboard-card {
+
+    width: 360px;
+
+    padding: 30px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 20px 50px rgba(30, 40, 70, 0.10);
+
+    animation:
+        cardFloat 4s ease-in-out infinite,
+        cardFade 1s ease 0.4s both;
+
+}
+
+
+@keyframes cardFade {
+
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+
+@keyframes cardFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+}
+
+
+.card-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+
+.card-header span {
+
+    color: #8992a4;
+
+    font-size: 12px;
+
+}
+
+
+.card-header h2 {
+
+    margin-top: 5px;
+
+    font-size: 35px;
+
+    color: #172033;
+
+}
+
+
+.card-icon {
+
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 15px;
+
+    background: #eeedff;
+
+    color: #4f46e5;
+
+    font-size: 22px;
+
+}
+
+
+/* Progress */
+
+.progress {
+
+    width: 100%;
+
+    height: 8px;
+
+    margin-top: 25px;
+
+    border-radius: 10px;
+
+    background: #edf0f5;
+
+    overflow: hidden;
+
+}
+
+
+.progress-bar {
+
+    width: 75%;
+
+    height: 100%;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        90deg,
+        #4f46e5,
+        #7c3aed
+    );
+
+    animation: progressAnimation 1.5s ease;
+
+}
+
+
+@keyframes progressAnimation {
+
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 75%;
+    }
+
+}
+
+
+.card-footer {
+
+    margin-top: 15px;
+
+    font-size: 11px !important;
+
+    color: #22a06b !important;
+
+}
+
+
+.card-footer i {
+
+    margin-right: 5px;
+
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1200px) {
+
+    .navbar {
+
+        padding: 0 25px;
+
+    }
+
+    .logo {
+
+        min-width: 200px;
+
+    }
+
+    .nav-menu {
+
+        margin-left: 10px;
+
+    }
+
+    .nav-link {
+
+        padding: 9px;
+
+    }
+
+    .nav-link span {
+
+        display: none;
+
+    }
+
+    .search-box {
+
+        width: 150px;
+
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 850px) {
+
+    .navbar {
+
+        height: 70px;
+
+        padding: 0 20px;
+
+    }
+
+
+    .logo {
+
+        min-width: auto;
+
+    }
+
+
+    .logo-text small {
+
+        display: none;
+
+    }
+
+
+    .nav-right {
+
+        display: none;
+
+    }
+
+
+    .menu-toggle {
+
+        display: block;
+
+        margin-left: auto;
+
+    }
+
+
+    .nav-menu {
+
+        position: absolute;
+
+        top: 70px;
+
+        left: 15px;
+        right: 15px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 5px;
+
+        padding: 15px;
+
+        background: white;
+
+        border-radius: 15px;
+
+        box-shadow:
+            0 15px 40px rgba(0, 0, 0, 0.12);
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        transform: translateY(-15px);
+
+        transition: all 0.3s ease;
+
+    }
+
+
+    .nav-menu.show {
+
+        opacity: 1;
+
+        visibility: visible;
+
+        transform: translateY(0);
+
+    }
+
+
+    .nav-link {
+
+        padding: 13px;
+
+        justify-content: flex-start;
+
+    }
+
+
+    .nav-link span {
+
+        display: inline;
+
+    }
+
+
+    .nav-link::after {
+
+        display: none;
+
+    }
+
+
+    .main-content {
+
+        padding: 50px 25px;
+
+    }
+
+
+    .hero {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+
+    .dashboard-card {
+
+        width: 100%;
+
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 500px) {
+
+    .logo-text span {
+
+        font-size: 14px;
+
+    }
+
+
+    .logo-icon {
+
+        width: 40px;
+        height: 40px;
+
+    }
+
+
+    .hero h1 {
+
+        font-size: 38px;
+
+    }
+
+
+    .hero-buttons {
+
+        flex-direction: column;
+
+    }
+
+
+    .primary-btn,
+    .secondary-btn {
+
+        justify-content: center;
+
+    }
+
+}
